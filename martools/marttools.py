@@ -443,7 +443,7 @@ class MartTools(Listeners, commands.Cog):
         em.set_footer(text=_("Since {}").format(uptime))
         await ctx.send(embed=em)
 
-    @commands.command(aliases=["prefixes"])
+    """@commands.command(aliases=["prefixes"])
     async def prefix(self, ctx: commands.Context):
         """Show all prefixes of the bot"""
         default_prefixes = await self.bot._config.prefix()
@@ -481,7 +481,7 @@ class MartTools(Listeners, commands.Cog):
             else:
                 await ctx.send(
                     bold(_("Server {} of {name}:\n")).format(plural, bot_name) + " ".join(to_send)
-                )
+                )"""
 
     @commands.command(aliases=["serverc", "serversc"])
     async def servercount(self, ctx: commands.Context):
