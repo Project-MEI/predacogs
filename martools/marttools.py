@@ -443,10 +443,10 @@ class MartTools(Listeners, commands.Cog):
         em.set_footer(text=_("Since {}").format(uptime))
         await ctx.send(embed=em)
 
-    """@commands.command(aliases=["prefixes"])
-    async def prefix(self, ctx: commands.Context):
+    # @commands.command(aliases=["prefixes"])
+    # async def prefix(self, ctx: commands.Context):
         """Show all prefixes of the bot"""
-        default_prefixes = await self.bot._config.prefix()
+        """default_prefixes = await self.bot._config.prefix()
         try:
             guild_prefixes = await self.bot._config.guild(ctx.guild).prefix()
         except AttributeError:
