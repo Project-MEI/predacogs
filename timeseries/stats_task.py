@@ -145,7 +145,7 @@ async def write_bot_data(bot: Red, config_cache: SettingCacheManager):
                     for feature in guild.features:
                         features_count[f"{features.get(f'{feature}') or 'Unknown'}"] += 1
                     verify_count[f"{verify.get(f'{guild.verification_level}') or 'Unknown'}"] += 1
-                    region_count[f"{vc_regions.get(f'{guild.region}') or 'Unknown'}"] += 1
+                    #region_count[f"{vc_regions.get(f'{guild.region}') or 'Unknown'}"] += 1
                 server_counter["Roles"] += len(guild.roles)
                 if guild.large:
                     server_temp_data["Large"].add(guild.id)
