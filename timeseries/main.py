@@ -295,8 +295,8 @@ class TimeSeries(commands.Cog):
         if ctx.message.author.bot:
             return
         command = ctx.command.qualified_name
-        self.commands_cache["session"].get(command, 0) += 1
-        self.commands_cache["persistent"].get(command, 0) += 1
+        self.commands_cache["session"][command] += 1
+        self.commands_cache["persistent"][command] += 1
 
     async def start_tasks(self):
         for task in [self.update_task, self.save_commands_stats]:
