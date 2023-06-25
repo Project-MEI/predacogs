@@ -170,8 +170,8 @@ async def write_bot_data(bot: Red, config_cache: SettingCacheManager):
                             temp_data["NSFW Text Channels"].add(channel.id)
                         if channel.is_news():
                             temp_data["News Text Channels"].add(channel.id)
-                        if channel.type is discord.ChannelType.store:
-                            temp_data["Store Text Channels"].add(channel.id)
+                        #if channel.type is discord.ChannelType.store:
+                            #temp_data["Store Text Channels"].add(channel.id)
                     elif isinstance(channel, discord.VoiceChannel):
                         server_counter["Voice Channels"] += 1
                         counter["Users in a VC"] += len(channel.members)
