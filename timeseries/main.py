@@ -107,11 +107,9 @@ class TimeSeries(commands.Cog):
     def cog_unload(self):
         self.bot.loop.create_task(self.update_command_usage())
         if self._start_task:
-            logging.info("Cancelling start task...")
             self._start_task.cancel()
         for task in self._tasks:
             with contextlib.suppress(Exception):
-                logging.info(f"Cancelling task {task}")
                 task.cancel()
 
         if self.client["client"]:
@@ -119,11 +117,7 @@ class TimeSeries(commands.Cog):
             self.client["write_api"].__del__()
 
         if getattr(self.bot, "_stats_task", None):
-            logging.info("Cancelling stats task")
-            try:
-                self.bot._stats_task.cancel()
-            except Exception as e:
-                logging.info(f"Failed to cancel stats task: {e}")
+            self.bot._stats_task.cancel()
 
     async def connect_to_influx(self, token=None):
         if self.api_ready:
