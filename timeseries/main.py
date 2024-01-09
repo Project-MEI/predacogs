@@ -120,7 +120,10 @@ class TimeSeries(commands.Cog):
 
         if getattr(self.bot, "_stats_task", None):
             logging.info("Cancelling stats task")
-            self.bot._stats_task.cancel()
+            try:
+                self.bot._stats_task.cancel()
+            except Exception as e:
+                logging.info(f"Failed to cancel stats task: {e}")
 
     async def connect_to_influx(self, token=None):
         if self.api_ready:
