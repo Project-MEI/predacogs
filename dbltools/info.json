@@ -5,7 +5,7 @@
   "short": "Tools to get bots information from top.gg.",
   "description": "Tools to get bots information from top.gg, post stats, set a daily reward for votes, or give a role to new users who voted.",
   "tags": ["top.gg", "botlist", "stats"],
-  "requirements": ["dblpy", "tabulate"],
+  "requirements": ["git+https://github.com/top-gg/DBL-Python-Library", "tabulate"],
   "min_bot_version" : "3.5.0",
   "end_user_data_statement": "This cog does not persistently store data or metadata about users."
 }
